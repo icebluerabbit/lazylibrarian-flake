@@ -265,10 +265,10 @@ attribute set of string
 
 
 
-Declarative settings merged into LazyLibrarian’s \<filename>config.ini\</filename>
+Declarative settings merged into LazyLibrarian’s ` config.ini `
 on every start. Each attribute is an INI section; each key inside it an entry.
 
-LazyLibrarian rewrites \<filename>config.ini\</filename> itself at runtime — storing
+LazyLibrarian rewrites ` config.ini ` itself at runtime — storing
 only the values that differ from its defaults — so the file cannot simply be
 replaced by a copy from the Nix store. Instead the keys declared here are merged
 into the existing file before each start, leaving keys you have not declared
