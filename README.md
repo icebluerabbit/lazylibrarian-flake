@@ -5,14 +5,13 @@
 [![Cachix Cache](https://img.shields.io/badge/Cachix-icebluerabbit--lazylibrarian-blue.svg)](https://icebluerabbit-lazylibrarian.cachix.org)
 [![Nix Built](https://img.shields.io/badge/Nix-Flake-blue.svg?logo=nixos&logoColor=white)](https://nixos.org)
 
-This repository provides a Nix Flake for [**LazyLibrarian**](https://gitlab.com/LazyLibrarian/LazyLibrarian) (book, magazine and audiobook automation for Usenet and BitTorrent), containing the packaged application, the two Python dependencies missing from nixpkgs, and fully configurable NixOS and Home Manager service modules.
+This repository provides a Nix Flake for [**LazyLibrarian**](https://gitlab.com/LazyLibrarian/LazyLibrarian) (book, magazine and audiobook automation for Usenet and BitTorrent), containing the packaged application, the two Python dependencies missing from nixpkgs, and a fully configurable NixOS service module.
 
 ---
 
 ## 📚 Documentation
 
 *   [**NixOS Options (`docs/NIXOS_OPTIONS.md`)**](docs/NIXOS_OPTIONS.md): Configuration options for the NixOS service module.
-*   [**Home Manager Options (`docs/HOME_MANAGER_OPTIONS.md`)**](docs/HOME_MANAGER_OPTIONS.md): Configuration options for the Home Manager service module.
 
 ---
 
@@ -69,21 +68,6 @@ Where `/run/secrets/lazylibrarian-env` contains:
 
 ```
 LAZYLIBRARIAN_API_KEY=your_api_key_here
-```
-
-### Home Manager Module
-
-Run it per-user under a user systemd service:
-
-```nix
-{ inputs, ... }: {
-  imports = [ inputs.lazylibrarian-flake.homeManagerModules.default ];
-
-  services.lazylibrarian = {
-    enable = true;
-    settings.API.book_api = "GoogleBooks";
-  };
-}
 ```
 
 ---
