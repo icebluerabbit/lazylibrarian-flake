@@ -51,7 +51,6 @@
               echo "==> Generating and copying LazyLibrarian options documentation..."
               mkdir -p docs
               cp -f ${self'.packages.docs}/NIXOS_OPTIONS.md docs/NIXOS_OPTIONS.md
-              cp -f ${self'.packages.docs}/HOME_MANAGER_OPTIONS.md docs/HOME_MANAGER_OPTIONS.md
               echo "==> Done!"
             ''}";
           };
@@ -114,8 +113,6 @@
         nixosModules.lazylibrarian = import ./modules/nixos.nix;
         nixosModules.default = self.nixosModules.lazylibrarian;
 
-        homeManagerModules.lazylibrarian = import ./modules/home-manager.nix;
-        homeManagerModules.default = self.homeManagerModules.lazylibrarian;
       };
     };
 }
