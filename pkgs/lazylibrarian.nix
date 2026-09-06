@@ -50,13 +50,13 @@ let
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "lazylibrarian";
-  version = "0-unstable-2026-08-29";
+  version = "0-unstable-2026-09-05";
 
   src = fetchFromGitLab {
     owner = "LazyLibrarian";
     repo = "LazyLibrarian";
-    rev = "58e4e3ac7811b6f607173279954243fdf24ea982";
-    hash = "sha256-Y694hJAn+yM6ALFOUp/LIkY4zjZHehxW6TUyWYnU4Fs=";
+    rev = "fd0ddab46f1dce9a0be46bdd72114ae2ad2d4942";
+    hash = "sha256-uVjJZw109c+NThrz4WvL6Nz2y50OUTZ8RxJ5JaH4Il8=";
   };
 
   # Declare ourselves a distribution package, which upstream's version.py invites
